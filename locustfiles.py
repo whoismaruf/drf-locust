@@ -21,5 +21,5 @@ class Items(HttpUser):
 
     @task
     def get_item(self):
-        for item_id in range(1, total_items + 1):
-            self.client.get(f"/items/{item_id}/")
+        for item in Item.objects.all():
+            self.client.get(f"/items/{item.pk}/")
