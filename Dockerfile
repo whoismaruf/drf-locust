@@ -13,9 +13,5 @@ COPY requirements.txt /app/
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
-# Add a non-root user for security purposes (optional but recommended)
-RUN user1 --disabled-password --gecos '' user1
-USER user1
-
 # Copy the rest of the application code into the container
 COPY . /app/
