@@ -17,6 +17,12 @@ class Items(HttpUser):
 
     @task
     def get_items(self):
+        #  token = user.token
+        # headers = {
+        #     "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+        # }
+        # self.client.get("/items/", headers=headers)
+
         self.client.get("/items/")
 
     @task
